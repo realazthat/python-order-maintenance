@@ -28,11 +28,11 @@ class LowerNode:
             #Scan to extents of subtree
             count = 0
             begin = self
-            while begin.prev_node is not None and begin.prev_node.upper == self.upper:
+            while begin.prev_node is not None and begin.prev_node.upper is self.upper:
                 begin = begin.prev_node
                 count += 1
             end = self
-            while end.next_node is not None and end.next_node.upper == self.upper:
+            while end.next_node is not None and end.next_node.upper is self.upper:
                 end = end.next_node
                 count += 1
                 
@@ -44,7 +44,7 @@ class LowerNode:
                 #Relabel nodes
                 label = 0
                 for j in range(LOGM):
-                    if cur == end:
+                    if cur is end:
                         return result
 
                     cur.label = label
@@ -86,7 +86,7 @@ class LowerNode:
         other.prev_node = None
         
         cur = other
-        while cur is not None and cur.upper == self.upper:
+        while cur is not None and cur.upper is self.upper:
             cur.upper = nupper
 
             cur = cur.next_node
