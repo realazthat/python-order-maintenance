@@ -1,10 +1,12 @@
 
 
 from .upper_list import M, LOGM, createUpperList
+from functools import total_ordering
+
 
 MSTEP = (M//LOGM)
 
-
+@total_ordering
 class LowerNode:
     def __init__(self,upper, label, next_node, prev_node, value=None):
         self.upper = upper
@@ -97,6 +99,10 @@ class LowerNode:
         if d != 0:
             return d
         return self.label - other.label
+    def __lt__(self,other):
+        return self.compare(other) < 0
+    def __eq__(self,other):
+        return self.compare(other) == 0
 
 def createLowerList(*args):
     root = LowerNode(createUpperList(), 0, None, None)
