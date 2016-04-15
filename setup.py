@@ -7,6 +7,6 @@ setup(name='order-maintenance',
       description='Order Maintenance Library',
       author='Mikola Lysenko, Azriel Fasten',
       author_email='mikolalysenko@gmail.com, realazthat@gmail.com',
-      url='https://github.com/mikolalysenko/order-maintenance',
+      url='https://github.com/realazthat/python-order-maintenance',
       packages=['order_maintenance'],
      )
